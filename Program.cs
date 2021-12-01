@@ -316,7 +316,7 @@ namespace DeadByDaylight
                 {
                     if (USkillCheck != IntPtr.Zero)
                     {
-                        Console.WriteLine($"USkillCheck: {USkillCheck.ToString("X")}");
+                        //Console.WriteLine($"USkillCheck: {USkillCheck.ToString("X")}");
                         var isDisplayed = Memory.ZwReadBool(processHandle,
                             (IntPtr)USkillCheck.ToInt64() + 0x148);
 
