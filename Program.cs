@@ -216,12 +216,12 @@ namespace DeadByDaylight
                             if (GWorldPtr == IntPtr.Zero)
                             {
                                 //GWorldPtr = Memory.ZwFindSignature(processHandle, GameBase, GameSize, "48 8B 1D ? ? ? ? 48 85 DB 74 3B 41", 0x3); //4.1 patch
-                                GWorldPtr = Memory.ZwReadPointer(processHandle, GameBase + 0x95225E0, isWow64Process);
+                                GWorldPtr = Memory.ZwReadPointer(processHandle, GameBase + 0x9E24E60, isWow64Process);
                             }
                             if (GNamesPtr == IntPtr.Zero)
                             {
                                 //GNamesPtr = Memory.ZwFindSignature(processHandle, GameBase, GameSize, "48 8B 05 ? ? ? ? 48 85 C0 75 5F", 0x3); //4.1 patch
-                                GNamesPtr = GameBase + 0x9352F80;
+                                GNamesPtr = GameBase + 0x9C558C0;
                                 //Console.WriteLine($"GNamesPtr: {GNamesPtr.ToString("X")}");
                             }
                         }
@@ -273,7 +273,7 @@ namespace DeadByDaylight
                                 if (ULocalPlayerPawn != IntPtr.Zero)
                                 {
                                     var UInteractionHandler = Memory.ZwReadPointer(processHandle,
-                                        (IntPtr)ULocalPlayerPawn.ToInt64() + 0x08D8, isWow64Process);
+                                        (IntPtr)ULocalPlayerPawn.ToInt64() + 0x08E8, isWow64Process);
 
                                     if (UInteractionHandler != IntPtr.Zero)
                                     {
@@ -316,16 +316,18 @@ namespace DeadByDaylight
                 {
                     if (USkillCheck != IntPtr.Zero)
                     {
-
+                        Console.WriteLine($"USkillCheck: {USkillCheck.ToString("X")}");
                         var isDisplayed = Memory.ZwReadBool(processHandle,
-                            (IntPtr)USkillCheck.ToInt64() + 0x0130);
+                            (IntPtr)USkillCheck.ToInt64() + 0x148);
+
+                        Console.WriteLine(isDisplayed);
                         if (isDisplayed && LastSpacePressedDT.AddMilliseconds(200) <
                             DateTime.Now)
                         {
                             var currentProgress = Memory.ZwReadFloat(processHandle,
-                                (IntPtr)USkillCheck.ToInt64() + 0x0134); //0x02A0
+                                (IntPtr)USkillCheck.ToInt64() + 0x14C); //0x02A0
                             var startSuccessZone = Memory.ZwReadFloat(processHandle,
-                                (IntPtr)USkillCheck.ToInt64() + 0x0184);
+                                (IntPtr)USkillCheck.ToInt64() + 0x19C);
 
                             if (currentProgress > startSuccessZone)
                             {
@@ -358,12 +360,12 @@ namespace DeadByDaylight
                                     var AActorID = Memory.ZwReadUInt32(processHandle,
                                         (IntPtr)AActor.ToInt64() + 0x18);
 
-                                    var HealthPointer = Memory.ZwReadPointer(processHandle, (IntPtr)AActor.ToInt64() + 0x1348, isWow64Process);
-                                    bool IsActorDead = Memory.ZwReadBool(processHandle, (IntPtr)HealthPointer.ToInt64() + 0x01CC);
-                                    var Healthy = Memory.ZwReadByte(processHandle, (IntPtr)HealthPointer.ToInt64() + 0x01C8);
-                                    var HasBeenSearched = Memory.ZwReadBool(processHandle, (IntPtr)AActor.ToInt64() + 0x034C);
-                                    var IsCleansed = Memory.ZwReadByte(processHandle, (IntPtr)AActor.ToInt64() + 0x0338);
-                                    var HasBeenSet = Memory.ZwReadBool(processHandle, (IntPtr)AActor.ToInt64() + 0x04A8);
+                                    var HealthPointer = Memory.ZwReadPointer(processHandle, (IntPtr)AActor.ToInt64() + 0x1390, isWow64Process);
+                                    bool IsActorDead = Memory.ZwReadBool(processHandle, (IntPtr)HealthPointer.ToInt64() + 0x01E4);
+                                    var Healthy = Memory.ZwReadByte(processHandle, (IntPtr)HealthPointer.ToInt64() + 0x01E0);
+                                    var HasBeenSearched = Memory.ZwReadBool(processHandle, (IntPtr)AActor.ToInt64() + 0x0364);
+                                    var IsCleansed = Memory.ZwReadByte(processHandle, (IntPtr)AActor.ToInt64() + 0x0368);
+                                    var HasBeenSet = Memory.ZwReadBool(processHandle, (IntPtr)AActor.ToInt64() + 0x04C8);
 
                                     string retname = "";
                                     if ((AActorID > 0)) //&& (AActorID < 700000)
@@ -572,12 +574,12 @@ namespace DeadByDaylight
                                             if (AActorID != generatorID)
                                                 continue;
                                             var isRepaired =
-                                                Memory.ZwReadBool(processHandle, (IntPtr)AActor.ToInt64() + 0x0322);
+                                                Memory.ZwReadBool(processHandle, (IntPtr)AActor.ToInt64() + 0x0339);
                                             var isBlocked = Memory.ZwReadBool(processHandle,
-                                                (IntPtr)AActor.ToInt64() + 0x044C);
+                                                (IntPtr)AActor.ToInt64() + 0x0464);
 
                                             var currentProgressPercent =
-                                                Memory.ZwReadFloat(processHandle, (IntPtr)AActor.ToInt64() + 0x0330) *
+                                                Memory.ZwReadFloat(processHandle, (IntPtr)AActor.ToInt64() + 0x0348) *
                                                 100;
                                             Color selectedColor;
                                             if (isBlocked)
