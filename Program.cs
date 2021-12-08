@@ -195,13 +195,14 @@ namespace DeadByDaylight
             if (FindWindow == IntPtr.Zero) FindWindow = Memory.FindWindowName("DeadByDaylight  ");
             if (FindWindow != IntPtr.Zero)
             {
-
+                
                 var calcPid = Memory.GetPIDFromHWND(FindWindow);
                 gameProcessExists = true;
                 if (processHandle == IntPtr.Zero) processHandle = Memory.ZwOpenProcess(PROCESS_ALL_ACCESS, calcPid);
 
                 if (processHandle != IntPtr.Zero)
                 {
+                    Console.WriteLine("entered");
                     if (GameBase == IntPtr.Zero) GameBase = Memory.ZwGetModule(processHandle, null, isWow64Process);
                     if (GameBase != IntPtr.Zero)
                     {
