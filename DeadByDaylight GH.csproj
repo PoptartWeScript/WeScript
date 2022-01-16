@@ -37,25 +37,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="WeScript.Wrapper">
-      <HintPath>C:\Users\Jerem\Downloads\WeScript\System\WeScript.Wrapper.dll</HintPath>
+      <HintPath>D:\WeScript\System\WeScript.Wrapper.dll</HintPath>
     </Reference>
     <Reference Include="WeScript.SDK">
-      <HintPath>C:\Users\Jerem\Downloads\WeScript\System\WeScript.SDK.dll</HintPath>
+      <HintPath>D:\WeScript\System\WeScript.SDK.dll</HintPath>
     </Reference>
     <Reference Include="SharpDX">
-      <HintPath>C:\Users\Jerem\Downloads\WeScript\System\SharpDX.dll</HintPath>
+      <HintPath>D:\WeScript\System\SharpDX.dll</HintPath>
     </Reference>
     <Reference Include="SharpDX.Direct3D9">
-      <HintPath>C:\Users\Jerem\Downloads\WeScript\System\SharpDX.Direct3D9.dll</HintPath>
+      <HintPath>D:\WeScript\System\SharpDX.Direct3D9.dll</HintPath>
     </Reference>
     <Reference Include="SharpDX.Mathematics">
-      <HintPath>C:\Users\Jerem\Downloads\WeScript\System\SharpDX.Mathematics.dll</HintPath>
+      <HintPath>D:\WeScript\System\SharpDX.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="SharpDX.XInput">
-      <HintPath>C:\Users\Jerem\Downloads\WeScript\System\SharpDX.XInput.dll</HintPath>
+      <HintPath>D:\WeScript\System\SharpDX.XInput.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>C:\Users\Jerem\Downloads\WeScript\System\Newtonsoft.Json.dll</HintPath>
+      <HintPath>D:\WeScript\System\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
