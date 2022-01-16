@@ -231,7 +231,7 @@ namespace DeadByDaylight
             if (!gameProcessExists) return; //process is dead, don't bother drawing
             if ((!isGameOnTop) && (!isOverlayOnTop)) return; //if game and overlay are not on top, don't draw
             if (!Components.MainAssemblyToggle.Enabled) return; //main menu boolean to toggle the cheat on or off            
-;
+            ;
             var myPos = new Vector3();
             var USkillCheck = IntPtr.Zero;
             if (GWorldPtr != IntPtr.Zero)
@@ -314,7 +314,7 @@ namespace DeadByDaylight
                         }
                     }
                 }
-                var ULevel = Memory.ZwReadPointer(processHandle,GWorldPtr + 0x38, isWow64Process);
+                var ULevel = Memory.ZwReadPointer(processHandle, GWorldPtr + 0x38, isWow64Process);
                 if (ULevel != IntPtr.Zero)
                 {
                     var AActors = Memory.ZwReadPointer(processHandle, (IntPtr)ULevel.ToInt64() + 0xA0, isWow64Process);
@@ -351,9 +351,9 @@ namespace DeadByDaylight
                                             if (retname.Contains("BP_CamperFemale")) survivorID = AActorID;
                                             if (retname.Contains("BP_CamperMale")) survivorID = AActorID;
                                             if (retname.Contains("SlasherInteractable_")) killerID = AActorID;
-                                            if (retname.Contains("BP_Escape01"))escapeID = AActorID;
-                                            if (retname.Contains("BP_Hatch"))hatchID = AActorID;                                           
-                                            if (retname.StartsWith("Generator"))generatorID = AActorID;
+                                            if (retname.Contains("BP_Escape01")) escapeID = AActorID;
+                                            if (retname.Contains("BP_Hatch")) hatchID = AActorID;
+                                            if (retname.StartsWith("Generator")) generatorID = AActorID;
                                             if (retname.Contains("BearTrap") || retname.Contains("PhantomTrap") || retname.Contains("DreamSnare")) TrapID = AActorID;
                                             if (retname.ToLower().Contains("hexspawner") || retname.ToLower().Contains("totem")) totemID = AActorID;
                                             if (retname.ToLower().Contains("chest")) ChestID = AActorID;
@@ -483,8 +483,8 @@ namespace DeadByDaylight
                                                     if (!HasBeenSearched) Renderer.DrawText("Chest [" + dist + "m]", vScreen_d3d11, Color.HotPink, 12, TextAlignment.centered, false);
                                                 }
                                             }
-                                            }
-                                            if (AActorID == totemID)
+                                        }
+                                        if (AActorID == totemID)
                                         {
                                             if (Components.VisualsComponent.DrawTotems.Enabled && IsCleansed > 0)
                                             {
@@ -559,7 +559,7 @@ namespace DeadByDaylight
                                                         selectedColor, 15, TextAlignment.centered, false);
                                             }
                                         }
-                                        
+
                                     }
                                 }
                             }
@@ -567,3 +567,6 @@ namespace DeadByDaylight
                     }
                 }
             }
+        }
+    }
+}
