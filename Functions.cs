@@ -1,33 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@PoptartWeScript 
-PoptartWeScript
-/
-WeScript
-Public
-Code
-Issues
-1
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-Add files via upload
- main
-@PoptartWeScript
-PoptartWeScript committed on Dec 8, 2021 
-1 parent 3785227 commit c2c4eb3e2a789190d7f87b853289a147fc9cfd0d
-Showing  with 553 additions and 360 deletions.
- 63  Functions.cs 
-@@ -0,0 +1,63 @@
 using System;
 using WeScriptWrapper;
 
