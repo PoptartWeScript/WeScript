@@ -1,63 +1,66 @@
-﻿using System;
-namespace RogueCompany
+using System;
+namespace DeadByDaylight
 {
     public class Offsets
 
     {
 
         public static Int64 GObjects = 0x9D37A20;
-        public static Int64 GNames = 0x6759478;
-        public static Int64 UWorld = 0x689BE48;
+        public static Int64 GNames = 0x9CEBC40;
+        public static Int64 UWorld = 0x9EBB210;
 
         public class UE
         {
             public class UWorld
             {
-                public static Int64 PersistentLevel = 0x30; // class ULevel*
+                public static Int64 PersistentLevel = 0x38; // class ULevel*
                 public static Int64 NetworkManager = 0x60; // class AGameNetworkManager*
-                public static Int64 OwningGameInstance = 0x188;
-                public static Int64 GameState = 0x130;// class UGameInstance*
+                public static Int64 OwningGameInstance = 0x198; // class UGameInstance*
             }
 
             public class ULevel
             {
-                public static Int64 AActors = 0x98;
-                public static Int64 AActorsCount = 0xA0;
+                public static Int64 AActors = 0xA0;
+                public static Int64 AActorsCount = 0xA8;
+            }
+
+            public class UdbdPlayer
+            {
+                public static Int64 _interactionHandler = 0x08E8;
+
             }
 
             public class UGameInstance
             {
-                public static Int64 LocalPlayers = 0x38;
+                public static Int64 LocalPlayers = 0x40;
             }
 
             public class UPlayer
             {
-                public static Int64 PlayerController = 0x30;
+                public static Int64 PlayerController = 0x38;
+                public static Int64 CurrentNetSpeed = 0x40;
             }
 
             public class APlayerController
             {
-                public static Int64 AcknowledgedPawn = 0x02A0;
-                public static Int64 PlayerCameraManager = 0x02B8;
+                public static Int64 AcknowledgedPawn = 0x2B8;
+                public static Int64 PlayerCameraManager = 0x2D0;
             }
 
             public class AController
             {
-                public static Int64 PlayerState = 0x228;
-                public static Int64 Pawn = 0x250;
-                public static Int64 Character = 0x260;
+                public static Int64 PlayerState = 0x238;
+                public static Int64 Pawn = 0x268;
+                public static Int64 Character = 0x278;
                 public static Int64 TransformComponent = 0x280;
-                public static Int64 ControlRotation = 0x288;
+                public static Int64 ControlRotation = 0x2A0;
             }
 
             public class APawn
             {
-                public static Int64 PlayerState = 0x240;
+                public static Int64 PlayerState = 0x250;
                 public static Int64 Controller = 0x268;
                 public static Int64 Health = 0x830;
-                public static Int64 Pawn = 0x250;
-                public static Int64 Character = 0x260;
-			    public static Int64 TransformComponent = 0x268;
                 public static Int64 MaxHealth = 0x850;
             }
 
@@ -71,26 +74,26 @@ namespace RogueCompany
                 public static Int64 PlayerId = 0x234;
                 public static Int64 Ping = 0x238;
                 public static Int64 UniqueId = 0x260;
-                public static Int64 PlayerNamePrivate = 0x300;
+                public static Int64 PlayerNamePrivate = 0x318;
                 public static Int64 Team = 0x372;
                 public static float Score = 0x230;
             }
 
             public class AKSTeamState
             {
-                public static Int64 r_TeamNum = 0x0220;
+                public static Int64 r_TeamNum = 0x220;
             }
 
             public class AActor
             {
-                public static Int64 Instigator = 0x0118;
-                public static Int64 RootComponent = 0x130;
+                public static Int64 Instigator = 0x0128;
+                public static Int64 RootComponent = 0x140;
                 public static Int64 _outlineComponent = 0x240;
             }
 
             public class ACharacter
             {
-                public static Int64 Mesh = 0x280;
+                public static Int64 Mesh = 0x290;
                 public static Int64 CharacterMovement = 0x298;
             }
 
@@ -108,14 +111,17 @@ namespace RogueCompany
 
             public class USceneComponent
             {
-                public static Int64 RelativeLocation = 0x11C; //0x118 for some reason // struct FVector
-                public static Int64 RelativeRotation = 0x128; // struct FRotator
-                public static Int64 ComponentVelocity = 0x140; // struct FVector
+                public static Int64 BoundsOrigin = 0x100; // vec3
+                public static Int64 BoundsExtended = 0x10C; // vec3
+                public static Int64 BoundsRadius = 0x118; // float
+                public static Int64 RelativeLocation = 0x134; //0x118 for some reason // struct FVector
+                public static Int64 RelativeRotation = 0x140; // struct FRotator
+                public static Int64 ComponentVelocity = 0x158; // struct FVector
             }
 
             public class UStaticMeshComponent
             {
-                public static Int64 ComponentToWorld = 0x1C0; //Bone Array
+                public static Int64 ComponentToWorld = 0x1E0; //Bone Array
                 public static Int64 StaticMesh = 0x490; // class UStaticMesh*
             }
 
@@ -123,34 +129,15 @@ namespace RogueCompany
             {
                 public static Int64 SkeletalMesh = 0x478; // class USkeletalMesh*
                 public static Int64 bDisplayBones = 0x61E; // Bool
-                public static Int64 bRecentlyRendered = 0x5D7; // Bool
-                public static Int64 CachedWorldSpaceBounds = 0x478; // FTransform 450 / 470 (0x00F8) MISSED OFFSET
+                public static Int64 bRecentlyRendered = 0x61F; // Bool
+                public static Int64 CachedWorldSpaceBounds = 0x4A0; // FTransform 450 / 470 (0x00F8) MISSED OFFSET
             }
 
-            public class AKSCharacter
-            { // class AKSCharacter : public AKSCharacterBase
-                public static Int64 IsAimDownSightsHeld = 0x218B; // bool
-                public static Int64 ActiveWeaponComponent = 0x21F0; // class UKSWeaponComponent*
-            }
-
-            public class UKSWeaponComponent
-            { // class UKSWeaponComponent : public UKSEquipmentCosmeticComponent
-                public static Int64 TargetingVisualizerInstance = 0x0538; // class UKSWeaponTargetingModule*
-            }
-
-            public class UKSDefaultAimTargetingModule
-            { // class UKSWeaponComponent : public UKSEquipmentCosmeticComponent
-                public static Int64 bAimedAtEnemy = 0x013C; // bool
-            }
             public class USkeletalMesh
             {
                 public static Int64 Skeleton = 0x68; // class USkeleton*
             }
 
-            public class AKSPlayerState
-            {
-                public static Int64 r_Team = 0x0398; // class USkeleton*
-            }
             public class USkeleton
             {
                 public static Int64 BoneTree = 0x40; // TArray<struct FBoneNode>
