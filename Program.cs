@@ -238,13 +238,13 @@ namespace DeadByDaylight
                             if (GWorldPtr == IntPtr.Zero)
                             {
                                 //GWorldPtr = Memory.ZwFindSignature(processHandle, GameBase, GameSize, "48 8B 1D ? ? ? ? 48 85 DB 74 3B 41", 0x3); //4.1 patch
-                                GWorldPtr = Memory.ZwReadPointer(processHandle, GameBase + 0xA36D8E0, isWow64Process);
+                                GWorldPtr = Memory.ZwReadPointer(processHandle, GameBase + 0xA371AA0, isWow64Process);
                                 // "Epic Games" GWorldPtr = Memory.ZwReadPointer(processHandle, GameBase + 0x97EA450, isWow64Process);
                             }
                             if (GNamesPtr == IntPtr.Zero)
                             {
                                 //GNamesPtr = Memory.ZwFindSignature(processHandle, GameBase, GameSize, "48 8B 05 ? ? ? ? 48 85 C0 75 5F", 0x3); //4.1 patch
-                                GNamesPtr = GameBase + 0xA19DE40;
+                                GNamesPtr = GameBase + 0xA1A2000;
                                 //"Epic Games GNamesPtr = GameBase + 0x962D240;
                                 //Console.WriteLine($"GNamesPtr: {GNamesPtr.ToString("X")}");
                             }
@@ -294,7 +294,6 @@ namespace DeadByDaylight
                                         (IntPtr)ULocalPlayerPawn.ToInt64() + 0x08F8, isWow64Process);
                                     if (UInteractionHandler != IntPtr.Zero)
                                     {
-
                                         USkillCheck = Memory.ZwReadPointer(processHandle,
                                             (IntPtr)UInteractionHandler.ToInt64() + 0x02D8, isWow64Process);
                                     }
