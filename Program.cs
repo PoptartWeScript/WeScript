@@ -238,13 +238,13 @@ namespace DeadByDaylight
                             if (GWorldPtr == IntPtr.Zero)
                             {
                                 //GWorldPtr = Memory.ZwFindSignature(processHandle, GameBase, GameSize, "48 8B 1D ? ? ? ? 48 85 DB 74 3B 41", 0x3); //4.1 patch
-                                GWorldPtr = Memory.ZwReadPointer(processHandle, GameBase + 0xA371AA0, isWow64Process);
+                                GWorldPtr = Memory.ZwReadPointer(processHandle, GameBase + 0xA374AA0, isWow64Process);
                                 // "Epic Games" GWorldPtr = Memory.ZwReadPointer(processHandle, GameBase + 0x97EA450, isWow64Process);
                             }
                             if (GNamesPtr == IntPtr.Zero)
                             {
                                 //GNamesPtr = Memory.ZwFindSignature(processHandle, GameBase, GameSize, "48 8B 05 ? ? ? ? 48 85 C0 75 5F", 0x3); //4.1 patch
-                                GNamesPtr = GameBase + 0xA1A2000;
+                                GNamesPtr = GameBase + 0xA1A5000;
                                 //"Epic Games GNamesPtr = GameBase + 0x962D240;
                                 //Console.WriteLine($"GNamesPtr: {GNamesPtr.ToString("X")}");
                             }
@@ -364,7 +364,7 @@ namespace DeadByDaylight
                                         (IntPtr)USceneComponent.ToInt64() + 0x118);
                                     AActorID = Memory.ZwReadUInt32(processHandle,
                                         (IntPtr)AActor.ToInt64() + 0x18);
-                                    HealthPointer = Memory.ZwReadPointer(processHandle, (IntPtr)AActor.ToInt64() + 0x13A0, isWow64Process);
+                                    HealthPointer = Memory.ZwReadPointer(processHandle, (IntPtr)AActor.ToInt64() + 0x13A8, isWow64Process);
                                     IsActorDead = Memory.ZwReadBool(processHandle, (IntPtr)HealthPointer.ToInt64() + 0x01E4);
                                     Healthy = Memory.ZwReadByte(processHandle, (IntPtr)HealthPointer.ToInt64() + 0x01E0);
                                     HasBeenSearched = Memory.ZwReadBool(processHandle, (IntPtr)AActor.ToInt64() + 0x0364);
