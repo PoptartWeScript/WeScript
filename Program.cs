@@ -378,6 +378,7 @@ namespace DeadByDaylight
                                                 if (retname.Contains("BP_CamperMale12_Character")) survivorname = "Felix";
                                                 if (retname.Contains("BP_CamperMale13_Character")) survivorname = "Leon";
                                                 if (retname.Contains("BP_CamperMale14_Character")) survivorname = "Jonah";
+                                                if (retname.Contains("BP_CamperMale14_Character")) survivorname = "Yoichi";
                                                 Renderer.WorldToScreenUE4(new Vector3(tempVec.X, tempVec.Y, tempVec.Z - 130.0f), out vScreen_f33t, FMinimalViewInfo_Location, FMinimalViewInfo_Rotation, FMinimalViewInfo_FOV, wndMargins, wndSize);
                                                 if (Components.VisualsComponent.DrawSurvivorBox.Enabled && !IsActorDead && dist > 5)
                                                 {
