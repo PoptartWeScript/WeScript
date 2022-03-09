@@ -429,6 +429,7 @@ namespace DeadByDaylight
                                                 if (retname.Contains("BP_Slasher_Character_24_C")) killername = "Nemesis";
                                                 if (retname.Contains("BP_Slasher_Character_25_C")) killername = "Cenobite";
                                                 if (retname.Contains("BP_Slasher_Character_26_C")) killername = "Artist";
+                                                if (retname.Contains("BP_Slasher_Character_27_C")) killername = "The Ring";
                                                 if (retname.Contains("Twin")) killername = "Victor";
                                                 if (Components.VisualsComponent.DrawKillerBox.Enabled)
                                                 {
