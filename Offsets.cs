@@ -5,15 +5,15 @@ namespace DeadByDaylight
 public class Offsets
 
 {
-   public static Int64 UWorld = 0xA477210;
-   public static Int64 GNames = 0xA2A6480;
+   public static Int64 UWorld = 0xB842FA0;
+   public static Int64 GNames = 0xB663BC0;
 
 public class UE
 {
 
    public class UWorld
 {
-       public static Int64 OwningGameInstance = 0x198;
+       public static Int64 OwningGameInstance = 0x190;
        public static Int64 ULevel = 0x38;
 }
 
@@ -66,7 +66,7 @@ public class UE
 
    public class APlayerCameraManager
 {
-       public static Int64 CameraCachePrivate = 0x1A80;
+       public static Int64 CameraCachePrivate = 0x1B00;
 }
 
 }
