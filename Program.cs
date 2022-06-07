@@ -525,7 +525,7 @@ namespace DeadByDaylight
                                             if (AActorID != generatorID)
                                                 continue;
                                             isRepaired = Memory.ZwReadBool(processHandle, (IntPtr)(AActor.ToInt64() + Offsets.UE.AActor.isRepaired));
-                                            isBlocked = Memory.ZwReadBool(processHandle,(IntPtr)AActor.ToInt64() + 0x0464);
+                                            isBlocked = Memory.ZwReadBool(processHandle,(IntPtr)AActor.ToInt64() + 0x468);
                                             currentProgressPercent =Memory.ZwReadFloat(processHandle, (IntPtr)(AActor.ToInt64() + Offsets.UE.AActor.currentProgressPercent)) * 100;
                                             Color selectedColor;
                                             if (isBlocked)
