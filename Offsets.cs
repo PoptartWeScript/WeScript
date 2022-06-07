@@ -5,8 +5,8 @@ namespace DeadByDaylight
 public class Offsets
 
 {
-   public static Int64 UWorld = 0xB6FC040;
-   public static Int64 GNames = 0xB51D840;
+   public static Int64 UWorld = 0xB9735A0;
+   public static Int64 GNames = 0xB794B00;
 
 public class UE
 {
@@ -58,9 +58,9 @@ public class UE
        public static Int64 IsActorDead = 0x1E4;
        public static Int64 Healthy = 0x1E0;
        public static Int64 HasBeenSearched = 0x364;
-       public static Int64 IsCleansed = 0x368;
+       public static Int64 IsCleansed = 0x378;
        public static Int64 isRepaired = 0x339;
-       public static Int64 HasBeenSet = 0x4D0;
+       public static Int64 HasBeenSet = 0x4B0;
        public static Int64 currentProgressPercent = 0x348;
 }
 
