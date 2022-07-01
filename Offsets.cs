@@ -5,8 +5,8 @@ namespace DeadByDaylight
 public class Offsets
 
 {
-   public static Int64 UWorld = 0xB9735A0;
-   public static Int64 GNames = 0xB794B00;
+   public static Int64 UWorld = 0xB9882E0;
+   public static Int64 GNames = 0xB7A9840;
 
 public class UE
 {
